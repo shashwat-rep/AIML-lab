@@ -12,25 +12,22 @@ uploaded = files.upload()
 df = pd.read_csv(io.BytesIO(upload['sample.csv']))
 
 # Display the number of rows in the dataset
-print("Number of rows:", df.shape[0])
+df.shape[0]
 
 # Display the number of columns in the dataset
-print("Number of columns:", df.shape[1])
+df.shape[1]
 
 # Display the first five rows of the dataset
-print("\nFirst five rows:")
-print(df.head())
+df.head(5)
 
 # Display the total size (number of elements) in the dataset
-print("\nSize of the dataset:", df.size)
+df.size
 
 # Check and display the number of missing values in each column
-print("\nNumber of missing values in each column:")
-print(df.isnull().sum())
+df.isnull().sum()
 
 # Select only the numerical columns from the dataset
 numerical_columns = df.select_dtypes(include=['number'])
 
 # Calculate and display summary statistics (sum, mean, min, max) for the numerical columns
-print("\nSummary statistics for numerical columns:")
-print(numerical_columns.agg(['sum', 'mean', 'min', 'max']))
+numerical_columns.agg(['sum', 'mean', 'min', 'max'])
