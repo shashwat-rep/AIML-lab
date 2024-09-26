@@ -9,7 +9,7 @@ uploaded = files.upload()
 
 # Read the CSV file into a Pandas DataFrame
 # The 'io.BytesIO' is used to convert the uploaded binary file into a readable stream
-df = pd.read_csv(io.BytesIO(list(uploaded.values())[0]))
+df = pd.read_csv(io.BytesIO(upload['sample.csv']))
 
 # Display the number of rows in the dataset
 print("Number of rows:", df.shape[0])
